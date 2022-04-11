@@ -6,5 +6,8 @@ void main() =>runApp(MaterialApp(
       title:Text("my first app"),
       centerTitle: true,
     ),
+    body: Center(
+      child: Text("Hello, World"),
+    ),
   ),
 ));
