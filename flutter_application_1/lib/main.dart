@@ -16,13 +16,12 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.black26,
       ),
       body: Center(
-        child: ElevatedButton.icon(
-          onPressed: () {},
-          icon: Icon(
-            Icons.headphones,
-          ),
-          label: Text("Songs"),
-          style: ElevatedButton.styleFrom(primary: Colors.black26),
+        child: IconButton(
+          onPressed: () {
+            print("you clicked this icon");
+          },
+          icon: Icon(Icons.music_note),
+          color: Colors.black26,
         ),
       ),
       floatingActionButton: FloatingActionButton(
