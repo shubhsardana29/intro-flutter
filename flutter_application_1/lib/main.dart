@@ -16,6 +16,8 @@ class Home extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 244, 3, 3),
       ),
       body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text("text widget"),
           TextButton(
