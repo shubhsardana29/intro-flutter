@@ -15,9 +15,22 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 244, 3, 3),
       ),
-      body: Padding(
-        padding:EdgeInsets.all(80),
-        child: Text("Welcome to Flutter!"),
+      body: Row(
+        children: <Widget>[
+          Text("text widget"),
+          TextButton(
+            onPressed: () {},
+            child: Text("text button"),
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    Color.fromARGB(66, 228, 0, 0))),
+          ),
+          Container(
+            color: Color.fromARGB(255, 201, 127, 127),
+            padding: EdgeInsets.all(30),
+            child: Text("inside container"),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
