@@ -16,12 +16,12 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.black26,
       ),
       body: Center(
-        child: Icon(
-          Icons.headphones_rounded,
-          color: Colors.lightBlue,
-          size: 60,
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text("click me"),
+          style:ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.black26)),
         ),
-        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Text("click"),
