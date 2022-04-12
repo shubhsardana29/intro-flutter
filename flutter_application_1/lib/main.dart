@@ -13,21 +13,18 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text("First App"),
         centerTitle: true,
-        backgroundColor: Colors.black26,
+        backgroundColor: Color.fromARGB(255, 244, 3, 3),
       ),
-      body: Center(
-        child: IconButton(
-          onPressed: () {
-            print("you clicked this icon");
-          },
-          icon: Icon(Icons.music_note),
-          color: Colors.black26,
-        ),
+      body: Container(
+        padding:EdgeInsets.all(20),
+        margin:EdgeInsets.all(20),
+        color: Color.fromARGB(255, 198, 201, 200),
+        child: Text("Welcome to Flutter!"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Text("click"),
-        backgroundColor: Colors.black26,
+        backgroundColor: Color.fromARGB(255, 238, 96, 96),
       ),
     );
   }
