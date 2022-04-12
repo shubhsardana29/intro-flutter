@@ -15,10 +15,8 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 244, 3, 3),
       ),
-      body: Container(
-        padding:EdgeInsets.all(20),
-        margin:EdgeInsets.all(20),
-        color: Color.fromARGB(255, 198, 201, 200),
+      body: Padding(
+        padding:EdgeInsets.all(80),
         child: Text("Welcome to Flutter!"),
       ),
       floatingActionButton: FloatingActionButton(
