@@ -18,7 +18,11 @@ class Home extends StatelessWidget {
       body: Row(
         children: <Widget>[
           Expanded(
-            flex: 3,
+            flex:3,
+            child: Image.asset("assets/image1.jpg")
+          ),
+          Expanded(
+            flex: 1,
             child: Container(
               padding: EdgeInsets.all(30),
               color: Color.fromARGB(255, 255, 68, 130),
@@ -26,7 +30,7 @@ class Home extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 1,
             child: Container(
               padding: EdgeInsets.all(30),
               color: Color.fromARGB(255, 37, 184, 17),
