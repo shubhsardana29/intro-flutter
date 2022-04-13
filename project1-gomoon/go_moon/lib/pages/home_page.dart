@@ -6,8 +6,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pageTitle(),
-      
+      body: SafeArea(
+        child: Container(
+          child: _pageTitle()
+          )
+        ),
     );
   }
 
@@ -16,10 +19,10 @@ class HomePage extends StatelessWidget {
       "#GoMoon",
       style: TextStyle(
         color: Colors.white,
-        fontSize:70,
+        fontSize: 70,
         fontWeight: FontWeight.w800,
       ),
-      );
+    );
   }
 
   Widget _astroImageWidget() {
