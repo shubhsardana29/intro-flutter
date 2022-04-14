@@ -15,9 +15,17 @@ class HomePage extends StatelessWidget {
         width: _deviceWidth,
         padding: EdgeInsets.symmetric(
             horizontal: _deviceWidth * 0.05, vertical: _deviceHeight * 0.05),
-        child: _destinationDropDownWidget(),
-      )),
-    );
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            _pageTitle(),
+            _destinationDropDownWidget(),
+          ],
+        ),
+      )
+    ),
+  );
   }
 
   Widget _pageTitle() {
