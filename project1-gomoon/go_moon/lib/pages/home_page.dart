@@ -10,13 +10,13 @@ class HomePage extends StatelessWidget {
     _deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          height: _deviceHeight,
-          width: _deviceWidth,
-          padding:EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05,vertical:_deviceHeight * 0.05),
-          child: _pageTitle(),
-          )
-        ),
+          child: Container(
+        height: _deviceHeight,
+        width: _deviceWidth,
+        padding: EdgeInsets.symmetric(
+            horizontal: _deviceWidth * 0.05, vertical: _deviceHeight * 0.05),
+        child: _destinationDropDownWidget(),
+      )),
     );
   }
 
@@ -38,6 +38,21 @@ class HomePage extends StatelessWidget {
           fit: BoxFit.fill,
           image: AssetImage("assets/images/astro_moon.png"),
         ),
+      ),
+    );
+  }
+
+  Widget _destinationDropDownWidget() {
+    List<DropdownMenuItem<String>> _items = [
+      'James Web Station',
+      'Prennure Station',
+    ].map((e) {
+      return DropdownMenuItem(child: Text(e), value: e);
+    }).toList();
+    return Container(
+      child: DropdownButton(
+        onChanged: (_) {},
+        items: _items,
       ),
     );
   }
