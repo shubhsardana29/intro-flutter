@@ -21,8 +21,7 @@ class HomePage extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
               _pageTitle(),
-              _destinationDropDownWidget(),
-              _travellersInformationWidget(),
+              _bookRideWidget(),
             ],
           ),
         ),
@@ -65,14 +64,45 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _travellersInformationWidget() {
-    return CustomDropdownBtnClass(
-      values: const [
-        '1',
-        '2',
-        '3',
-        '4',
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        CustomDropdownBtnClass(
+          values: const [
+            '1',
+            '2',
+            '3',
+            '4',
+          ],
+          width: _deviceWidth * 0.45,
+        ),
+        CustomDropdownBtnClass(
+          values: const [
+            'Economy',
+            'Business',
+            'First',
+            'Private',
+          ],
+          width: _deviceWidth * 0.40,
+        ),
       ],
-      width: _deviceWidth * 0.45,
+    );
+  }
+
+  Widget _bookRideWidget() {
+    return Container(
+      height: _deviceHeight * 0.25,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _destinationDropDownWidget(),
+          _travellersInformationWidget(),
+        ],
+      ),
     );
   }
 }
