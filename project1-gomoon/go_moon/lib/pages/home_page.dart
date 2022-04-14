@@ -16,12 +16,21 @@ class HomePage extends StatelessWidget {
           width: _deviceWidth,
           padding: EdgeInsets.symmetric(
               horizontal: _deviceWidth * 0.05, vertical: _deviceHeight * 0.05),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
+          child: Stack(
             children: [
-              _pageTitle(),
-              _bookRideWidget(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _pageTitle(),
+                  _bookRideWidget(),
+                ],
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: _astroImageWidget(),
+              ),
             ],
           ),
         ),
@@ -42,6 +51,8 @@ class HomePage extends StatelessWidget {
 
   Widget _astroImageWidget() {
     return Container(
+      height: _deviceHeight * 0.50,
+      width: _deviceWidth * 0.57,
       decoration: const BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fill,
