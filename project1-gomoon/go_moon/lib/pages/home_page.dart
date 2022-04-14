@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_moon/widgets/custom_dropdown_btn.dart';
 
 class HomePage extends StatelessWidget {
   late double _deviceHeight, _deviceWidth;
@@ -21,6 +22,7 @@ class HomePage extends StatelessWidget {
             children: [
               _pageTitle(),
               _destinationDropDownWidget(),
+              _travellersInformationWidget(),
             ],
           ),
         ),
@@ -53,46 +55,24 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _destinationDropDownWidget() {
-    List<String> _items = [
-      'James Web Station',
-      'Prennure Station',
-    ];
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal:_deviceWidth * 0.05),
+    return CustomDropdownBtnClass(
+      values: const [
+        'James Web Station',
+        'Prennure Station',
+      ],
       width: _deviceWidth,
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(
-          53,
-          53,
-          53,
-          1,
-        ),
-        borderRadius: BorderRadius.circular(
-          10,
-        ),
-      ),
-      child: DropdownButton(
-        value: _items.first,
-        onChanged: (_) {},
-        items: _items.map(
-          (e) {
-            return DropdownMenuItem(
-              child: Text(e),
-              value: e,
-            );
-          },
-        ).toList(),
-        underline: Container(),
-        dropdownColor: const Color.fromRGBO(
-          53,
-          53,
-          53,
-          1,
-        ),
-        style: const TextStyle(
-          color: Colors.white,
-        ),
-      ),
+    );
+  }
+
+  Widget _travellersInformationWidget() {
+    return CustomDropdownBtnClass(
+      values: const [
+        '1',
+        '2',
+        '3',
+        '4',
+      ],
+      width: _deviceWidth * 0.45,
     );
   }
 }
