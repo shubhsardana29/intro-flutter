@@ -1,6 +1,6 @@
-# go_moon
+# GoMoon
 
-A new Flutter project.
+Take a trip to outer space and book your ride from this App .
 
 
 # Screenshot
