@@ -25,6 +25,11 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontSize: 35),
         ),
       ),
+      body: _taskList(),
     );
+  }
+
+  Widget _taskList() {
+    return ListView();
   }
 }
