@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           subtitle: Text(DateTime.now().toString()),
+          trailing: const Icon(Icons.check_box_outlined),
         ),
       ],
     );
