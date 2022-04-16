@@ -30,6 +30,19 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _taskList() {
-    return ListView();
+    return ListView(
+      children: [
+        ListTile(
+          title: const Text(
+            "do homework",
+            style: TextStyle(
+              fontSize: 20,
+              decoration: TextDecoration.lineThrough,
+            ),
+          ),
+          subtitle: Text(DateTime.now().toString()),
+        ),
+      ],
+    );
   }
 }
