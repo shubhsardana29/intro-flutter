@@ -40,10 +40,32 @@ class _HomePageState extends State<HomePage> {
               decoration: TextDecoration.lineThrough,
             ),
           ),
-          subtitle: Text(DateTime.now().toString()),
-          trailing: const Icon(Icons.check_box_outlined),
+          subtitle: Text(
+            DateTime.now().toString(),
+          ),
+          trailing: const Icon(
+            Icons.check_box_outlined,
+            color: Colors.red,
+          ),
+        ),
+        ListTile(
+          title: const Text(
+            "Do Coding practice",
+            style: TextStyle(
+              fontSize: 20,
+              decoration: TextDecoration.lineThrough,
+            ),
+          ),
+          subtitle: Text(
+            DateTime.now().toString(),
+          ),
+          trailing: const Icon(
+            Icons.check_box_outlined,
+            color: Colors.red,
+          ),
         ),
       ],
     );
+    
   }
 }
