@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: _taskList(),
+      floatingActionButton: _addTaskButton(),
     );
   }
 
@@ -66,6 +67,12 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
     );
-    
+  }
+
+  Widget _addTaskButton() {
+    return FloatingActionButton(
+      onPressed: () {},
+      child: const Icon(Icons.add),
+    );
   }
 }
