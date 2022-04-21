@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class HomePage extends StatefulWidget {
   HomePage();
@@ -19,7 +20,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
     _deviceWidth = MediaQuery.of(context).size.width;
-    print("Input value: $_newTaskContent");
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: _deviceHeight * 0.15,
@@ -30,6 +30,15 @@ class _HomePageState extends State<HomePage> {
       ),
       body: _taskList(),
       floatingActionButton: _addTaskButton(),
+    );
+  }
+
+  Widget _taskView() {
+    return FutureBuilder(
+      future: Hive.openBox('tasks'),
+      builder: (BuildContext _context, AsyncSnapshot _snapshot) {
+        
+      },
     );
   }
 
