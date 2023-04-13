@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   late double _deviceHeight, _deviceWidth;
 
   String? _newTaskContent;
+  String? _searchQuery;
 
   Box? _box;
   _HomePageState();
@@ -38,8 +39,34 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: _tasksView(),
+      body: Column(
+        children: [
+          _searchBar(),
+          Expanded(
+            child: _tasksView(),
+          ),
+        ],
+      ),
       floatingActionButton: _addTaskButton(),
+    );
+  }
+
+  Widget _searchBar() {
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      child: TextField(
+        decoration: InputDecoration(
+          hintText: 'Search tasks',
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+        ),
+        onChanged: (_value) {
+          setState(() {
+            _searchQuery = _value;
+          });
+        },
+      ),
     );
   }
 
@@ -61,6 +88,14 @@ class _HomePageState extends State<HomePage> {
 
   Widget _tasksList() {
     List tasks = _box!.values.toList();
+    if (_searchQuery != null && _searchQuery!.isNotEmpty) {
+      tasks = tasks
+          .where((task) =>
+              Task.fromMap(task).content
+                  .toLowerCase()
+                  .contains(_searchQuery!.toLowerCase()))
+          .toList();
+    }
     return ListView.builder(
       itemCount: tasks.length,
       itemBuilder: (BuildContext _context, int _index) {
@@ -79,7 +114,7 @@ class _HomePageState extends State<HomePage> {
             task.done
                 ? Icons.check_box_outlined
                 : Icons.check_box_outline_blank_outlined,
-            color: Colors.red,
+            color: Colors.blueAccent,
           ),
           onTap: () {
             task.done = !task.done;
